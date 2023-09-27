@@ -1,15 +1,15 @@
 from flask import request
 from uuid import uuid4
 
-from app import app
+from . import bp
 
-from db import posts
+from db import levels
 
-@app.get('/level')
+@bp.get(')
 def get_levels():
   return {'levels': posts}
 
-@app.get('/level/<level_id>')
+@bp.get('<level_id>')
 def get_level(level_id):
   try:
     level = levels[level_id]
@@ -17,13 +17,13 @@ def get_level(level_id):
   except KeyError:
     return {'message': 'post not found'}, 400
 
-@app.post('/level')
+@bp.post('')
 def create_level():
   level_data = request.get_json()
   levels[uuid4().hex] = level_data
   return level_data, 201
 
-@app.put('/level/<level_id>')
+@bp.put('<level_id>')
 def edit_level(level_id):
   level_data = request.get_json()
   if level_id in levels:
@@ -32,7 +32,7 @@ def edit_level(level_id):
     return level, 200
   return {'message': 'Post not found'}, 400
 
-@app.delete('/level/<level_id>')
+@bp.delete('<level_id>')
 def delete_level(level_id):
   try:
     deleted_level = levels.pop(level_id)

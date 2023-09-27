@@ -1,4 +1,4 @@
-users = {
+students = {
   '1':{
     'username':'kaimo',
     'email':'kaimo@lhs.com'
@@ -13,7 +13,7 @@ users = {
   }
 }
 
-levels = {
+level = {
   '1':{
     'body':'Off level',
     'user_id': '2'
