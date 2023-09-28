@@ -1,6 +1,5 @@
-from flask import Blueprint
+from flask_smorest import Blueprint
 
-bp = Blueprint('level', __name__, url_prefix='/level')
+bp = Blueprint('levels', __name__, url_prefix='/level')
 
-# from . import routes
-#   {} routes
+from . import routes

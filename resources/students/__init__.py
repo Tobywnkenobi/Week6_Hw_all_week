@@ -1,5 +1,5 @@
-from flask import Blueprint
+from flask_smorest import Blueprint
 
-bp = Blueprint('students', __name__,)
+bp = Blueprint('students', __name__, description='Ops on Students')
 
 from . import routes
