@@ -19,5 +19,6 @@ api.register_blueprint(level_bp)
 from resources.students import routes
 from resources.levels import routes
 
+
 from resources.students.Studentmodel import StudentModel
 from resources.levels.LevelModel import LevelModel
